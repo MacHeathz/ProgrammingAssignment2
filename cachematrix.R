@@ -1,7 +1,26 @@
-## Put comments here that give an overall description of what your
-## functions do
+## There's 4 functions in this file:
+## makeCacheMatrix and cacheSolve provide caching functionality for the inverse of
+## a matrix.
+## makeVector and cachemean provide caching functionality for the mean of a vector and
+## were provided as examples for the matrix caching functions.
 
-## This function creates a special "matrix" object that can cache its inverse.
+
+## This function creates a special "matrix" object that can cache its inverse. It
+## returns a list containing 4 getter and setter functions, you can call them using
+## the dollar sign: i.e. m$get() returns a matrix object.
+## 
+## Arguments
+## Optional argument m = matrix(): the matrix this list represents.
+##
+## Functions
+## get: returns the matrix of this list
+## set(y): set the matrix to matrix y 
+## getmean: returns this matrix's inverse
+## setmean(y): Sets the matrix's inverse to value y
+##
+## Returns
+## list with 4 functions.
+##
 makeCacheMatrix <- function(m = matrix()) {
   inv <- NULL
   get <- function() m
@@ -14,11 +33,17 @@ makeCacheMatrix <- function(m = matrix()) {
   list(get = get, set = set, getInverse = getInverse, setInverse = setInverse)
 }
 
-
 ## This function computes the inverse of the special "matrix" returned by
 ## makeCacheMatrix above. If the inverse has already been calculated (and
-## the matrix has not changed), then the cachesolve should retrieve the
+## the matrix has not changed), then the cachesolve retrieves the
 ## inverse from the cache.
+## 
+## Arguments
+## list x, created using makeCacheMatrix. Using cached inverse value if possible.
+##
+## Returns
+## Numeric value with the inverse of the supplied list's matrix.
+##
 cacheSolve <- function(x, ...) {
   result <- x$getInverse()
   if (!is.null(result)) {
@@ -31,7 +56,7 @@ cacheSolve <- function(x, ...) {
   result
 }
 
-#################### EXAMPLE FUNCTIONS #############################################
+#################### EXAMPLE FUNCTIONS BELOW ########################################
 
 ## MakeVector returns a list with some getter and setter functions for it's innards,
 ## a value x and it's mean.
