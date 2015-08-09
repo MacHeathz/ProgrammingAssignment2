@@ -13,9 +13,9 @@
 ## Optional argument m = matrix(): the matrix this list represents.
 ##
 ## Functions
-## get: returns the matrix of this list
+## get(): returns the matrix of this list
 ## set(y): set the matrix to matrix y 
-## getmean: returns this matrix's inverse
+## getmean(): returns this matrix's inverse
 ## setmean(y): Sets the matrix's inverse to value y
 ##
 ## Returns
@@ -65,9 +65,9 @@ cacheSolve <- function(x, ...) {
 ## Optional argument x = numeric(): the vector this list represents
 ##
 ## Functions
-## get: returns the numeric vector of this list
+## get(): returns the numeric vector of this list
 ## set(y): set the vector to numeric vector y 
-## getmean: returns this vector's mean
+## getmean(): returns this vector's mean
 ## setmean(y): Sets the vector's mean to value y
 ##
 ## Returns
