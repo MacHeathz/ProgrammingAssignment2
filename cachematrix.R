@@ -15,8 +15,8 @@
 ## Functions
 ## get(): returns the matrix of this list
 ## set(y): set the matrix to matrix y 
-## getmean(): returns this matrix's inverse
-## setmean(y): Sets the matrix's inverse to value y
+## getInverse(): returns this matrix's inverse
+## setInverse(y): Sets the matrix's inverse to value y
 ##
 ## Returns
 ## list with 4 functions.
@@ -35,7 +35,7 @@ makeCacheMatrix <- function(m = matrix()) {
 
 ## This function computes the inverse of the special "matrix" returned by
 ## makeCacheMatrix above. If the inverse has already been calculated (and
-## the matrix has not changed), then the cachesolve retrieves the
+## the matrix has not changed), then the cacheSolve retrieves the
 ## inverse from the cache.
 ## 
 ## Arguments
